@@ -10,7 +10,7 @@ namespace TwitterAzureFunction
     public static class Functions
     {
         [FunctionName("ReadTrumpTweets")]
-        public static void Run([TimerTrigger("0/15 * * * * *")]TimerInfo myTimer, TraceWriter log)
+        public static void Run([TimerTrigger("0/15 * * * * *"), Disable()]TimerInfo myTimer, TraceWriter log)
         {
             Auth.SetUserCredentials(
                 TwitterConnectionInfo.ConsumerKey,

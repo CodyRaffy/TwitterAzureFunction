@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterAzureFunction", "TwitterAzureFunction\TwitterAzureFunction.csproj", "{A21081B9-E504-4D8E-A336-0AA5FAFBB6E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwitterAzureFunction", "TwitterAzureFunction\TwitterAzureFunction.csproj", "{06929FD6-626B-44A8-AE12-73968EFFFC91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A21081B9-E504-4D8E-A336-0AA5FAFBB6E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A21081B9-E504-4D8E-A336-0AA5FAFBB6E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A21081B9-E504-4D8E-A336-0AA5FAFBB6E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A21081B9-E504-4D8E-A336-0AA5FAFBB6E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06929FD6-626B-44A8-AE12-73968EFFFC91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06929FD6-626B-44A8-AE12-73968EFFFC91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06929FD6-626B-44A8-AE12-73968EFFFC91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06929FD6-626B-44A8-AE12-73968EFFFC91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {93447BB9-00B1-4782-8303-1FA8123A3711}
+		SolutionGuid = {811DC177-B307-4431-8F34-E2458B7A92AD}
 	EndGlobalSection
 EndGlobal

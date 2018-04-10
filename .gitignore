@@ -2,5 +2,5 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/TwitterAzureFunction/TwitterConnectionInfo.cs
 /.vs
+/TwitterAzureFunction/TwitterConnectionInfo.cs

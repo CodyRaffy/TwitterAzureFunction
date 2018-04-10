@@ -10,13 +10,16 @@ namespace TwitterAzureFunction
     public static class Functions
     {
         [FunctionName("ReadTrumpTweets")]
-        public static void Run([TimerTrigger("0/15 * * * * *"), Disable()]TimerInfo myTimer, TraceWriter log)
+        public static void Run(
+            [TimerTrigger("0/15 * * * * *"), Disable()] TimerInfo myTimer,
+            [Table("TrumpTweets", Connection = "TwitterAzureStorage")] ICollector<TweetEntity> tableBinding,
+            TraceWriter log)
         {
             Auth.SetUserCredentials(
-                TwitterConnectionInfo.ConsumerKey,
-                TwitterConnectionInfo.ConsumerSecret,
-                TwitterConnectionInfo.AccessToken,
-                TwitterConnectionInfo.AccessTokenSecret);
+                Environment.GetEnvironmentVariable("ConsumerKey"),
+                Environment.GetEnvironmentVariable("ConsumerSecret"),
+                Environment.GetEnvironmentVariable("AccessToken"),
+                Environment.GetEnvironmentVariable("AccessTokenSecret"));
 
             var searchParameter = new SearchTweetsParameters("Trump")
             {
@@ -34,8 +37,14 @@ namespace TwitterAzureFunction
 
             foreach (var tweet in tweets)
             {
+                var newTweet = new TweetEntity("Trump", tweet.Id.ToString());
+                newTweet.AuthorId = tweet.CreatedBy.Id;
+                newTweet.AuthorName = tweet.CreatedBy.Name;
+                newTweet.AuthorScreenName = tweet.CreatedBy.ScreenName;
+                newTweet.FullText = tweet.FullText;
+
+                tableBinding.Add(newTweet);
                 log.Info($"Tweet: {tweet.FullText}");
-                log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
             }
         }
     }
